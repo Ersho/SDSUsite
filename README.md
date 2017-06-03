@@ -2,4 +2,5 @@
 
 Hello world! ^_^
 
-If you are blue and you don't know where to go and why don't you go
+If opposite of con is pro
+what is the opposite of constitution? :-D 
