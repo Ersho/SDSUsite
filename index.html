@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SDSU</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+</head>
+<body>
+<section id="intro">
+	<h1>Choose subject</h1>
+	<center>
+	<div class="container">
+	    <div id="pol">		
+	        <button onclick="location.href='pol.php'">Pol 106</button>
+		 <!--   <div class="boxed">
+		    <p> Learn the all mighty course of political science. Subject where only everyone fails :D</p>
+	        </div> 
+	    </div>-->
+	    </div>
+
+		<button id="math" onclick="location.href='math.php'">
+		Math	
+		</button>
+		<button id="chem" onclick="location.href='chem.php'">
+		Chemistry
+		</button>
+	</div>
+	</center>
+	<script>
+window.sr=ScrollReveal();
+sr.reveal('#pol',{
+	duration:1500,
+	origin:'left'
+});
+sr.reveal('#math',{
+	duration:1500,
+	origin:'top',
+	distance:"300px"
+});
+sr.reveal('#chem',{
+	duration:1500,
+	origin:'right',
+	distance:"300px",
+});
+</script>
+</section>
+</body>
+</html>
