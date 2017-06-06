@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    color: black;
+}
+
+body
+{
+    font-size: 30px;
+    background-size: cover;
+    color: black;
+}
+
+.main {
+    width: 1000px;
+    max-width: 90%;
+    margin: 0 auto ;
+}
+
+
+.Title {
+    background-color: darkred;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+input {
+    width: 100%;
+    font-size: 20px;
+    background: #c7c7c7;
+    border: none;
+    color: black;
+    /* border-bottom: 2px solid #337AB7; */
+    padding: 5px;
+    margin-top: 5px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: rgb(51, 122, 183) 0 0 6px;
+    border-radius: 5px;
+}
+select {
+    padding: 4px;
+    font-size: 15px;
+    margin-top: 20px;
+    width: 100%;
+    height: 35px;
+    border: 2px solid #ababab;
+    border-radius: 5px;
+    background: #c7c7c7;
+}
+
+.Button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: block;
+    width: 200px;
+    margin: 0 auto 4px auto;
+    background-color: darkred;
+    border: 0;
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: #042746 0 1px 2px;
+    cursor: pointer;
+}
+
+.Button:hover{
+    background-color: #cc0033;
+}
+
+.Button:focus{
+    background-color: #cc0033;
+}
+
+.errors{
+    font-size: 14px;
+    color: red;
+}
+.sheyvana{
+    color:black;
+}
