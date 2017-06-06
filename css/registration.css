@@ -8,7 +8,6 @@ body
     font-size: 30px;
     background: url("http://www.sportsmbablog.com/wp-content/uploads/2014/07/SDSU-Logo.png") no-repeat;
     background-size: cover;
-    color:white;
 }
 #olyinfo {
     display: block;
@@ -99,6 +98,7 @@ select {
     border: 0;
     border-radius: 3px;
     padding: 5px;
+    margin-top: 20px;
     box-shadow: #042746 0 1px 2px;
     cursor: pointer;
 }
