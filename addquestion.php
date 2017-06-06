@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once("php/functions.php");
-/*load();
-  if(!is_user($id,$username,$hashed)) redirect_to('loginBlog.php?url=addblog.php'); */
+load();
+  if(!is_user($id,$username,$hashed)) redirect_to('login.php?url=addquestion.php');
 ?>
 <!DOCTYPE html>
 <hmtl>

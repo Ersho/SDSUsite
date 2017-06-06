@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    color:white;
+    color: black;
 }
 
 body
@@ -8,7 +8,7 @@ body
     font-size: 30px;
     background: url("http://www.sportsmbablog.com/wp-content/uploads/2014/07/SDSU-Logo.png") no-repeat;
     background-size: cover;
-    color:white;
+    color: black;
 }
 #olyinfo {
     display: block;
@@ -57,6 +57,7 @@ input {
     font-size: 20px;
     background: #c7c7c7;
     border: none;
+    color: black;
     /* border-bottom: 2px solid #337AB7; */
     padding: 5px;
     margin-top: 5px;
@@ -114,4 +115,7 @@ select {
 .errors{
     font-size: 14px;
     color: red;
+}
+.sheyvana{
+    color:black;
 }

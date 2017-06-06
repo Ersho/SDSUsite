@@ -106,3 +106,48 @@ function changePassword()
 	});
     }
 }
+
+num=4;
+function add_choices(){
+	num++;
+	$('.choices').last().after('<div class = "choices"><a> Incorrect choice </a><br><textarea id = "choice'+num+'"  type = "text"></textarea><a class="errors"></a></div>');
+
+}
+
+function add_question(){
+	var t=1;
+	txt = $('#question').val();
+	if(txt.length==0) {$('#question').next().text("Enter the question"); t=0;}
+	else {$('#question').next().text('');}
+
+	txt = $('#choice1').val();
+	if(txt.length==0) {$('#choice1').next().text("Enter the correct choice"); t=0;}
+	else {$('#choice1').next().text('');}
+
+	txt = $('#choice2').val();
+	if(txt.length==0) {$('#choice2').next().text("Enter the incorrect choice"); t=0;}
+	else {$('#choice2').next().text('');}
+
+	choices = [];
+
+	if(t) {
+		j=0;
+		for(i=1; i<=num; i++){
+			txt = $('#choice'+i).val();
+			if(txt.length!=0) {
+				choices[j] = txt;
+				j++;
+			} 
+		}
+		$.post('php/addquestion.php', {question: $('#question').val(), choices: JSON.stringify(choices) },  function(succ){
+			console.log(succ); if(succ==1) alert("Question Added");
+			$('#question').val("");
+			for(i=1; i<=num; i++) $('#choice'+i).val("");
+		});
+
+
+	}
+
+
+}
+
