@@ -1,3 +1,10 @@
+<?php
+session_start();
+require_once('php/functions.php');
+global $con;
+load();
+if(!is_user($id,$username,$hashed)) redirect_to('registration.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +12,10 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -12,14 +23,12 @@
   	<div id="branding">
   	<h1><span class="highlight">POL 106 -</span>- Study Here</h1>	
   	</div>
-    <div id="tab">
-    <input id="username" name="name" placeholder="Username">
-    <input id="password" name="name" placeholder="Password">
-    </div>
-    <div id="undtab">
-    <button id="log">Log in</button>
-    <button onclick="location.href='registration.php'">Register</button>
-    </div>
+    <button style="width: auto;
+    font-size: 24px;
+    size: 15px;
+    float: right;
+    background: darkred;
+    border-color: #cc0033;" onclick="location.href='logout.php'">Log out</button>
     <!--
     <div id="myModal" class="modal">
   <! Modal content 

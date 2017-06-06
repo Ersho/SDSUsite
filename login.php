@@ -5,6 +5,7 @@ global $con;
 load();
 if(is_user($id,$username,$hashed)) redirect_to('pol.php');
 ?>
+
 <!DOCTYPE html>
 <hmtl>
 <head>
@@ -13,7 +14,7 @@ if(is_user($id,$username,$hashed)) redirect_to('pol.php');
 	<link rel="stylesheet" type="text/css" href="css/registration.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src = 'js/javascript.js'> </script>
-	<title>Register</title>
+	<title>Log</title>
 </head>
 <body>
 	<div class = "main"> 
@@ -23,7 +24,7 @@ if(is_user($id,$username,$hashed)) redirect_to('pol.php');
 		<div class = "box">
 			<div class = "box1" >
 				<div class = "Title">
-					<a>Registration Form</a>
+					<a>Log In</a>
 				</div>
 					<div class  = "Info Info1">
 						<div class = "Monacemi" style="margin-top:20px;">
@@ -50,45 +51,10 @@ if(is_user($id,$username,$hashed)) redirect_to('pol.php');
 								</tr>
 							</table>
 						</div>
-
-						<div class = "Monacemi">
-							<table>
-								<tr>
-									<td style="vertical-align: top">
-									</td>
-									<td><a>Confirm Password</a><input type="password" id = "password2" onkeyup="check_equal()" name="password2"/>
-									<a class = "errors"> </a>
-									</td>
-								</tr>
-							</table>
+						<div class= "Button" onclick="log()" style="margin-top: 25px">
+							<a> Log In </a>
 						</div>
-
-						<div class = "Monacemi">
-							<table>
-								<tr>
-									<td style="vertical-align: top"> 
-									</td>
-									<td><a> Email </a> <input type = "email" name="mail" id="email"/>
-									<a class = "errors"> </a>
-									</td>
-
-								</tr>
-							</table>
-						</div>
-
-				
-						<div class = "Monacemi">
-							<table>
-								<tr>
-									<td style="vertical-align: top">
-									</td>
-									<td><a> Red ID </a><input type="text" name="user_id" id="RED_ID"/>
-									<a class = "errors"> </a>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div class= "Button" onclick="check_all()">
+						<div class= "Button" onclick="location.href='registration.php'" style="margin-top: 25px">
 							<a> Register </a>
 						</div>
 			</div>

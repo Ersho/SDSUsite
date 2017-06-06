@@ -33,7 +33,7 @@ function load(){
 
 function is_user($id,$username,$hashed){
     global $con,$lsttimelogin;
-    if(isset($_SESSION['user']) && isset($_SESSION['id']) && $_SESSION['id']==$id) {$lsttimelogin=$_SESSION['lastlogin']; return 1;}
+    if(isset($_SESSION['user']) && isset($_SESSION['id']) && $_SESSION['id']==$id) {/*$lsttimelogin=$_SESSION['lastlogin'];*/ return 1;}
     //echo 'dasads';
 	$id=intval($id);
 	if(preg_match('/[^A-Za-z0-9]/', $username)) return 0;
@@ -42,12 +42,12 @@ function is_user($id,$username,$hashed){
 	$results=mysqli_query($con,$query);
     if(!mysqli_num_rows($results)) return 0;
     $res=mysqli_fetch_array($results);
-    $lsttimelogin=$res['lastlogin'];
-    $_SESSION['lastlogin']=$lsttimelogin;
-    $dttm=date('Y-m-d H:i:s',time());
-    $query="UPDATE users set lastlogin='{$dttm}' WHERE id={$id}";
-    $results=mysqli_query($con,$query);
-    $_SESSION['user']=1;
+    //$lsttimelogin=$res['lastlogin'];
+    //$_SESSION['lastlogin']=$lsttimelogin;
+    //$dttm=date('Y-m-d H:i:s',time());
+    //$query="UPDATE users set lastlogin='{$dttm}' WHERE id={$id}";
+    //$results=mysqli_query($con,$query);
+    //$_SESSION['user']=1;
     return 1;
 	//$res=mysqli_fetch_array($results);
 }

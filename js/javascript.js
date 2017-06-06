@@ -59,7 +59,7 @@ function log ()
     $.post("php/login.php", { username: username, password: password }, function (succ) {
         console.log(succ);
         if (succ == -1) {
-            window.location.href ='user/home.php';
+            window.location.href ='pol.php';
         }
         else {
             $("#username,#password").addClass('incrinput');
