@@ -23,12 +23,7 @@ if(!is_user($id,$username,$hashed)) redirect_to('registration.php');
   	<div id="branding">
   	<h1><span class="highlight">POL 106 -</span>- Study Here</h1>	
   	</div>
-    <button style="width: auto;
-    font-size: 24px;
-    size: 15px;
-    float: right;
-    background: darkred;
-    border-color: #cc0033;" onclick="location.href='logout.php'">Log out</button>
+    <button id = "log"; onclick="location.href='logout.php'">Log out</button>
     <!--
     <div id="myModal" class="modal">
   <! Modal content 

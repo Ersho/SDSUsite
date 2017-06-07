@@ -19,6 +19,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
                 $_SESSION["id"]=$res['id'];
                 $_SESSION["username"]=$name;
                 $_SESSION["hashed"]=$hashed;
+                $_SESSION['user']=1;
           }
           else $das=3;
     }

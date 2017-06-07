@@ -4,6 +4,8 @@ require_once('php/functions.php');
 global $con;
 load();
 if(is_user($id,$username,$hashed)) redirect_to('pol.php');
+
+if(isset($_GET['url'])) $red_url=$_GET['url']; else $red_url="index.php";
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +53,7 @@ if(is_user($id,$username,$hashed)) redirect_to('pol.php');
 								</tr>
 							</table>
 						</div>
-						<div class= "Button" onclick="log()" style="margin-top: 25px">
+						<div class= "Button" onclick="log('<?php echo $red_url ?>')" style="margin-top: 25px">
 							<a> Log In </a>
 						</div>
 						<div class= "Button" onclick="location.href='registration.php'" style="margin-top: 25px">

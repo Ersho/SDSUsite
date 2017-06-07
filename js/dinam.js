@@ -29,7 +29,7 @@ $(function()
 		$("#chem").show(1000);
 
           $('#pol').click(function() {
-        window.location = 'login.php';
+        window.location = 'login.php?url=pol.php';
         });
 
         $("#pol").removeClass("hidden").addClass("visible");

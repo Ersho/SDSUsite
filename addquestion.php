@@ -20,7 +20,7 @@ load();
 <body>
 	<div class = "main"> 
 		<br><br><br><br>
-		<a classs="Button" href = "index.html"> Back </a>
+		<a classs="Button" href = "profile.php"> Back </a>
 		<div >
 			<div class = "Title">
 				<a>  Add Question </a>
@@ -28,6 +28,16 @@ load();
 
 			<div class = "sheyvana">			
 				<a> Question </a><br><input id = "question" type="text" />
+				<a class="errors"></a>
+				<br><br>
+				<td><a> Subject </a>
+					<select name="sel_subject" id = "subject">
+						<option value="0"> Select Subject </option>
+						<option value="1"> Pol 106 </option>
+						<option value="2"> Math </option>
+						<option value="3"> Chemistry </option>
+					</select>
+				</td>
 				<a class="errors"></a>
 				<br><br>
 				<div class = "choices">

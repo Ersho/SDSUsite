@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once("php/functions.php");
+load();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +14,22 @@
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/dinam.js"></script>
+	<script type="text/javascript" src="js/javascript.js"></script>
 </head>
 <body>
 <section id="intro">
-	<?php if(is_user()) ?>
+	<?php 
+	if(is_user($id,$username, $hashed)){ 
+		
+		
+		echo profile();
+	} 
+	else{
+		$string = " <button id = 'log'; 
+		onclick='location.href=\"login.php\"'>Log in</button>";
+    	echo $string; 
+	}
+	?>
 	<h1 id="header" style="visibility: hidden">Click to choose another subject</h1>
 	<center>
 	<div class="container">	

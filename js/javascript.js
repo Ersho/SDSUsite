@@ -49,7 +49,7 @@ function check_all(){
 	}
 }
 
-function log ()
+function log (url)
 {
 	{
 	var username = $("#username").val();
@@ -59,7 +59,7 @@ function log ()
     $.post("php/login.php", { username: username, password: password }, function (succ) {
         console.log(succ);
         if (succ == -1) {
-            window.location.href ='pol.php';
+            window.location.href =url;
         }
         else {
             $("#username,#password").addClass('incrinput');
@@ -120,6 +120,10 @@ function add_question(){
 	if(txt.length==0) {$('#question').next().text("Enter the question"); t=0;}
 	else {$('#question').next().text('');}
 
+	txt = $('#subject option:selected').val();
+	if(txt==0) {$('#subject').next().text("Select the subject"); t=0;}
+	else {$('#subject').next().text('');}
+
 	txt = $('#choice1').val();
 	if(txt.length==0) {$('#choice1').next().text("Enter the correct choice"); t=0;}
 	else {$('#choice1').next().text('');}
@@ -139,8 +143,8 @@ function add_question(){
 				j++;
 			} 
 		}
-		$.post('php/addquestion.php', {question: $('#question').val(), choices: JSON.stringify(choices) },  function(succ){
-			console.log(succ); if(succ==1) alert("Question Added");
+		$.post('php/addquestion.php', {question: $('#question').val(), subject: $('#subject option:selected').val(), choices: JSON.stringify(choices) },  function(succ){
+			console.log(succ); if(succ==1) alert("Question Added"); else alert("aaaaaa");
 			$('#question').val("");
 			for(i=1; i<=num; i++) $('#choice'+i).val("");
 		});
@@ -151,3 +155,59 @@ function add_question(){
 
 }
 
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function edit_question(quesid){
+	var t=1;
+	txt = $('#question').val();
+	if(txt.length==0) {$('#question').next().text("Enter the question"); t=0;}
+	else {$('#question').next().text('');}
+
+	txt = $('#subject option:selected').val();
+	if(txt==0) {$('#subject').next().text("Select the subject"); t=0;}
+	else {$('#subject').next().text('');}
+
+	txt = $('#choice1').val();
+	if(txt.length==0) {$('#choice1').next().text("Enter the correct choice"); t=0;}
+	else {$('#choice1').next().text('');}
+
+	txt = $('#choice2').val();
+	if(txt.length==0) {$('#choice2').next().text("Enter the incorrect choice"); t=0;}
+	else {$('#choice2').next().text('');}
+
+	choices = [];
+
+	if(t) {
+		j=0;
+		for(i=1; i<=num; i++){
+			txt = $('#choice'+i).val();
+			if(txt.length!=0) {
+				choices[j] = txt;
+				j++;
+			} 
+		}
+		$.post('php/editquestion.php', {id: quesid, question: $('#question').val(), subject: $('#subject option:selected').val(), choices: JSON.stringify(choices) },  function(succ){
+			console.log(succ); if(succ==1) alert("Question Edited"); else alert("aaaaaa");
+		});
+
+
+	}
+
+
+}

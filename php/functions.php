@@ -51,3 +51,16 @@ function is_user($id,$username,$hashed){
     return 1;
 	//$res=mysqli_fetch_array($results);
 }
+
+function profile(){
+    global $username;
+    $string = "
+        <div class=\"dropdown\">
+          <button class=\"dropbtn\" onclick=\"myFunction()\">$username</button>
+          <div id=\"myDropdown\" class=\"dropdown-content\">
+            <a href=\"profile.php\">Profile</a>
+            <a href=\"logout.php\">Log out</a>
+          </div>
+        </div>";
+        return $string;
+}
