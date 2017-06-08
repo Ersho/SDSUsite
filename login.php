@@ -3,9 +3,10 @@ session_start();
 require_once('php/functions.php');
 global $con;
 load();
-if(is_user($id,$username,$hashed)) redirect_to('pol.php');
+if(is_user($id,$username,$hashed)) redirect_to('index.php');
 
-if(isset($_GET['url'])) $red_url=$_GET['url']; else $red_url="index.php";
+if(isset($_GET['url'])) $red_url=urldecode($_GET['url']); else $red_url="index.php";
+
 ?>
 
 <!DOCTYPE html>

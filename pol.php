@@ -11,6 +11,7 @@ if(!is_user($id,$username,$hashed)) redirect_to('registration.php');
 	<title>POL 106</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src = 'js/javascript.js'> </script>
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   <script
   src="https://code.jquery.com/jquery-3.2.1.js"
@@ -19,11 +20,8 @@ if(!is_user($id,$username,$hashed)) redirect_to('registration.php');
 </head>
 <body>
 <header>
-  	<div class="container">
-  	<div id="branding">
-  	<h1><span class="highlight">POL 106 -</span>- Study Here</h1>	
-  	</div>
-    <button id = "log"; onclick="location.href='logout.php'">Log out</button>
+    <?php echo hdr(); echo profile();?>
+  	
     <!--
     <div id="myModal" class="modal">
   <! Modal content 
@@ -57,7 +55,7 @@ btn.onclick = function() {
 </script>-->
   	<nav>
   		<ul>
-  			<li class="current"><a href="quizz.php">Quiz</a></li>
+  			<li class="current"><a href="quiz.php?subject=1">Quiz</a></li>
   			<li><a href="">Something</a></li>
   			<li><a href="flashcards.php">Flashcards</a></li>
   		</ul>

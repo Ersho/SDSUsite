@@ -16,6 +16,7 @@ $subjects = ["none","Pol 106", "Math", "Chemisty"];
 	
 </head>
 <body>
+			<a class = "Button" href = "addquestion.php"> Add Question</a>
 			<?php
 			$query = "SELECT * FROM questions WHERE author = $id order by id DESC";
 			$result = mysqli_query($con, $query);
@@ -33,6 +34,7 @@ $subjects = ["none","Pol 106", "Math", "Chemisty"];
 					$string .="<br>";
 				}
 				$string.="<a class = \"Button\" href = \"edit.php?id=".$res['id']."\" > Edit Question</a>
+				<a class = \"Button\" onclick=\"delete_question(".$res['id'].")\"> Delete Question </a>
 				<br><br>
 			</div><br><br>";
 			} echo $string;

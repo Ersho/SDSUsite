@@ -18,3 +18,4 @@ if(is_user($id,$username,$hashed)) {
     	echo 1;
     }
 }
+?>

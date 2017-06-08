@@ -29,7 +29,10 @@ $(function()
 		$("#chem").show(1000);
 
           $('#pol').click(function() {
-        window.location = 'login.php?url=pol.php';
+            if($logged==1)
+            window.location = "quiz.php?subject=1";
+            else
+            window.location = 'login.php?url='+encodeURIComponent("quiz.php?subject=1");
         });
 
         $("#pol").removeClass("hidden").addClass("visible");
@@ -37,7 +40,7 @@ $(function()
         $("#chem").removeClass("hidden").addClass("visible");
         $("#header").css({"visibility":"visible"});
         $('#header').click(function() {
-        window.location = 'index.html';
+        window.location = 'index.php';
         });
 
 	});
@@ -76,7 +79,7 @@ $(function()
         $("#chem").removeClass("hidden").addClass("visible");
         $("#header").css({"visibility":"visible"});
         $('#header').click(function() {
-        window.location = 'index.html';
+        window.location = 'index.php';
         });
 
 	});
@@ -116,7 +119,7 @@ $(function()
         
         $("#header").css({"visibility":"visible"});
         $('#header').click(function() {
-        window.location = 'index.html';
+        window.location = 'index.php';
         });
 	});
 });

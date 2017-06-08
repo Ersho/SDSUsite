@@ -103,6 +103,7 @@ select {
     margin-top: 20px;
     box-shadow: #042746 0 1px 2px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .Button:hover{

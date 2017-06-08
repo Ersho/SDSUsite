@@ -144,7 +144,7 @@ function add_question(){
 			} 
 		}
 		$.post('php/addquestion.php', {question: $('#question').val(), subject: $('#subject option:selected').val(), choices: JSON.stringify(choices) },  function(succ){
-			console.log(succ); if(succ==1) alert("Question Added"); else alert("aaaaaa");
+			console.log(succ); if(succ==1) {alert("Question Added"); window.location.href="myquestions.php";} else alert("Error");
 			$('#question').val("");
 			for(i=1; i<=num; i++) $('#choice'+i).val("");
 		});
@@ -203,11 +203,18 @@ function edit_question(quesid){
 			} 
 		}
 		$.post('php/editquestion.php', {id: quesid, question: $('#question').val(), subject: $('#subject option:selected').val(), choices: JSON.stringify(choices) },  function(succ){
-			console.log(succ); if(succ==1) alert("Question Edited"); else alert("aaaaaa");
+			console.log(succ); if(succ==1) {alert("Question Edited"); window.location.href="myquestions.php";} else alert("Error");
 		});
 
 
 	}
 
+
+}
+function delete_question(quesid){
+	if (confirm('Are you sure you want to delete this question?')) { 
+		$.post('php/deletequestion.php', {id: quesid}, function(succ){ console.log(succ); if(succ==1) alert("Question Deleted"); else alert("Error");
+		 } );
+	}
 
 }

@@ -64,3 +64,13 @@ function profile(){
         </div>";
         return $string;
 }
+function hdr(){
+    $string = "<div class=\"container\">
+    <div id=\"branding\">
+    <button onclick=\"location.href='index.php'\">Home</button>
+    <h1><span class=\"highlight\"> SDSUSITE -</span>- Study Here</h1>
+    </div>";   
+    
+    
+    return $string;
+}
