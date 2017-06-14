@@ -58,10 +58,11 @@ function profile(){
         <div class=\"dropdown\">
           <button class=\"dropbtn\" onclick=\"myFunction()\">$username</button>
           <div id=\"myDropdown\" class=\"dropdown-content\">
-            <a href=\"profile.php\">Profile</a>
+            <a href=\"profile.php\" id  = \"pro\" >Profile</a>
             <a href=\"logout.php\">Log out</a>
           </div>
-        </div>";
+        </div>
+        <div style='clear:both'></div>";
         return $string;
 }
 function hdr(){

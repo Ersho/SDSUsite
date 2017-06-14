@@ -1,3 +1,14 @@
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length; i; i--) {
+        j = Math.floor(Math.random() * i);
+        x = a[i - 1];
+        a[i - 1] = a[j];
+        a[j] = x;
+    }
+}
+
+
 function check_username(){
 	var txt = $("#username").val();
 	txt2=txt.replace(/[^a-zA-Z0-9 ]/i, "");
@@ -217,4 +228,44 @@ function delete_question(quesid){
 		 } );
 	}
 
+}
+num=0;
+function start_quiz(){
+	nxt_q();
+}
+
+function nxt_q(){
+	qid++;
+	num++;
+	if(qid==totalques) qid=0;
+	wrtq(qid);
+	$('.Button').attr('onclick','submit_ans()');
+	$('.Button').html('<a>Submit</a>');
+}
+
+function wrtq(){
+	var x='';
+	x+='<div id="statement">'+qs[qid].question+'</div>';
+	var smth = [];
+	for(i=0; i<qs[qid].choices.length; i++){
+		smth[i]=[qs[qid].choices[i], i];
+	}
+	shuffle(smth);
+	for(i=0; i<smth.length; i++){
+		x+='<input type="radio" name="Ques" value='+smth[i][1]+'><a id="shmsxz'+smth[i][1]+'">'+smth[i][0]+'</a> <br>';
+	}
+	$('#quiz').html(x);
+
+}
+function submit_ans(){
+	$value = $('input[name="Ques"]:checked').val();
+	$('#shmsxz0').addClass('true');
+	if($value!=0)  $('#shmsxz'+$value).addClass('false'); 
+	$('.Button').attr('onclick','nxt_q()');
+	$('.Button').html('<a>Next</a>');
+	$.post('php/quiz.php', {subject: subj, qid: qid}, function(succ){ console.log(succ);} );
+	if(num==3) {
+		$('.Button').attr('onclick','location.href=\'index.php\'');
+		$('.Button').html('<a>Results</a>');
+	}
 }

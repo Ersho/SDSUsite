@@ -52,13 +52,12 @@ body
     margin: 0 55px;
 }
 
-input {
+.monacemi input {
     width: 100%;
     font-size: 20px;
     background: #c7c7c7;
     border: none;
     color: black;
-    /* border-bottom: 2px solid #337AB7; */
     padding: 5px;
     margin-top: 5px;
 }
@@ -67,7 +66,7 @@ input {
     margin-top: 38px;
 }
 
-input:focus {
+.monacemi input:focus {
     outline: none;
     box-shadow: rgb(51, 122, 183) 0 0 6px;
     border-radius: 5px;
@@ -120,4 +119,10 @@ select {
 }
 .sheyvana{
     color:black;
+}
+.true{
+    background-color: green;
+}
+.false{
+    background-color: pink;
 }

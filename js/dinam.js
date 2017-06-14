@@ -74,6 +74,13 @@ $(function()
 		$("#math").show(1000);
 		$("#chem").show(1000);
 
+        $('#chem').click(function() {
+            if($logged==1)
+            window.location = "quiz.php?subject=3";
+            else
+            window.location = 'login.php?url='+encodeURIComponent("quiz.php?subject=3");
+        });
+
         $("#pol").removeClass("hidden").addClass("visible");
         $("#math").removeClass("hidden").addClass("visible");
         $("#chem").removeClass("hidden").addClass("visible");
@@ -112,6 +119,13 @@ $(function()
         $("#pol").show(1000);
 		$("#math").show(1000);
 		$("#chem").show(1000);
+
+        $('#math').click(function() {
+            if($logged==1)
+            window.location = "quiz.php?subject=2";
+            else
+            window.location = 'login.php?url='+encodeURIComponent("quiz.php?subject=2");
+        });
 
         $("#pol").removeClass("hidden").addClass("visible");
         $("#math").removeClass("hidden").addClass("visible");

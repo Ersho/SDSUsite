@@ -33,10 +33,13 @@ else $l = 0;
     	echo $string; 
 	}
 	?>
+	<div id = "backpic">
+	<table style="width:100%; height:100%"><td>STUDY HERE</td></table>
+	</div>
 	<h1 id="header" style="visibility: hidden">Click to choose another subject</h1>
 	<center>
 	<div class="container">	
-	        <button id="pol" style="color:white">Pol 106</button>
+	    <button id="pol" style="color:white">Pol 106</button>
 		 <!--   <div class="boxed">
 		    <p> Learn the all mighty course of political science. Subject where only everyone fails :D</p>
 	        </div> 
@@ -51,6 +54,7 @@ else $l = 0;
 	</div>
 	</center>
 	<script>
+
 window.sr=ScrollReveal();
 sr.reveal('#pol',{
 	duration:1500,
@@ -68,5 +72,6 @@ sr.reveal('#chem',{
 });
 </script>
 </section>
+<br> <br>
 </body>
 </html>
